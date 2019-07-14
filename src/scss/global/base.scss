@@ -1,0 +1,10 @@
+html {
+    @include rem-baseline;
+    line-height: 1.5;
+}
+
+body {
+    background-color: $pink;
+    color: $blue;
+    @include regular;
+}
