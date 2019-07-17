@@ -1,6 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+import instagram from '../img/social/instagram.svg'
+import twitter from '../img/social/twitter.svg'
+import github from '../img/github-icon.svg'
+
 const Navbar = class extends React.Component {
   constructor(props) {
     super(props)
@@ -37,6 +41,7 @@ const Navbar = class extends React.Component {
         role="navigation"
         aria-label="main-navigation"
       >
+        <Link to="/" className="navbar__item navbar__item--logo">helau</Link>
         {/* Hamburger menu */}
         <div
           className={`navbar-burger burger ${this.state.navBarActiveClass}`}
@@ -52,9 +57,6 @@ const Navbar = class extends React.Component {
           className={`navbar-menu ${this.state.navBarActiveClass}`}
         >
           <li>
-            <Link to="/" className="navbar__item--logo">helau</Link>
-          </li>
-          <li>
             <Link className="navbar__item" to="/portfolio">
               Portfolio
             </Link>
@@ -69,10 +71,48 @@ const Navbar = class extends React.Component {
               Shop
             </a>
           </li>
-          <li>
-            <Link className="navbar__item" to="/about">
-              About
-            </Link>
+          <li className="navbar__item navbar__item--icons">
+            <a 
+              title="twitter" 
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                className="fas fa-lg"
+                src={twitter}
+                alt="Twitter"
+                style={{ width: '1em', height: '1em' }}
+              />
+            </a>
+            /
+            <a 
+              title="instagram" 
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={instagram}
+                alt="Instagram"
+                style={{ width: '1em', height: '1em' }}
+              />
+            </a>
+            /
+            <a
+                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img 
+                  src={github} 
+                  alt="Github" 
+                  style={{ width: '1em', height: '1em' }}
+                />
+              </a>
+          </li>
+          <li className="navbar__item">
+            <a>hi@helau.co.uk</a>
           </li>
         </ul>
       </nav>

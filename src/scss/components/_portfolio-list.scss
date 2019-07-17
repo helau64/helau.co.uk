@@ -1,0 +1,20 @@
+.portfolio-list {
+    @include unlist;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: $padding-base;
+    @include max-width(xs) {
+        grid-template-columns: 1fr;
+    }
+    @include min-width(md) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.portfolio-list__item {
+    h2 {
+        @include base;
+        text-align: center;
+        padding: 0 $padding-base;
+    }
+}

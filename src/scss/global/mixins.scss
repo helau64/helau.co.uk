@@ -17,25 +17,39 @@
 }
 
 @mixin base {
-    font-size: rem(21px);
-}
-
-@mixin small {
     font-size: rem(16px);
 }
 
+@mixin small {
+    font-size: rem(14px);
+}
+
+@mixin h4 {
+  font-size: $h4;
+  @include max-width(sm) {
+      font-size: rem(18px);
+  }
+}
+
+@mixin h3 {
+  font-size: $h3;
+  @include max-width(sm) {
+    font-size: $h4;
+  }
+}
+
 @mixin h2 {
-    font-size: rem(32px);
-    @include max-width(sm) {
-        font-size: rem(26px);
-    }
+  font-size: $h2;
+  @include max-width(sm) {
+    font-size: $h3;
+  }
 }
 
 @mixin h1 {
-    font-size: rem(58px);
-    @include max-width(sm) {
-        @include h2;
-    }
+  font-size: $h1;
+  @include max-width(sm) {
+    font-size: $h2;
+  }
 }
 
 @mixin min-width($breakpoint) {

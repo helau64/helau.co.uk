@@ -12,12 +12,12 @@ class PortfolioRoll extends React.Component {
       <ul className="portfolio-list">
         {posts &&
           posts.map(({ node: post }) => (
-            <li key={post.id} className={`blog-list-item ${
+            <li key={post.id} className={`portfolio-list__item ${
                 post.frontmatter.featuredpost ? 'is-featured' : ''
               }`}
             >
               <Link to={post.fields.slug}>
-                <div className="featured-thumbnail">
+                <div className="thumbnail">
                   <PreviewCompatibleImage
                     imageInfo={{
                       image: post.frontmatter.featuredimage,
@@ -27,7 +27,7 @@ class PortfolioRoll extends React.Component {
                     }}
                   />
                 </div>
-                  <h2>{post.frontmatter.title}</h2>
+                  <h2 className="color-blue">{post.frontmatter.title}</h2>
               </Link>
             </li>
           ))}

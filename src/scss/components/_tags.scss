@@ -1,0 +1,32 @@
+.tag-list--tag-page {
+    @include unlist;
+    margin-bottom: rem($padding-base);
+    &__tag {
+        border-bottom: 2px dashed $blue;
+        h2 {
+            @include h4;
+            margin-bottom: 0;
+        }
+        a {
+            display: block;
+            padding-bottom: rem($padding-base);
+        }
+        span {
+            @include base;
+        }
+    }
+}
+
+.tag-list--blog-post {
+    margin-top: rem($padding-base) * 1.5;
+    ul {
+        @include unlist;
+    }
+    &__tag {
+        display: inline-block;
+        margin-left: rem($padding-base);
+        &:first-of-type {
+            margin-left: 0;
+        }
+    }
+}

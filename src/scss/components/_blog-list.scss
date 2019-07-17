@@ -1,0 +1,12 @@
+.blog-list {
+    @include unlist;
+    &__item {
+        padding-bottom: rem($padding-base);  
+        + .blog-list__item {
+            border-top: 2px dashed $blue;
+        }
+        .title {
+            @include h3;
+        }
+    }
+}

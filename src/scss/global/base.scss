@@ -1,6 +1,7 @@
 html {
     @include rem-baseline;
     line-height: 1.5;
+    box-sizing: border-box;
 }
 
 body {
