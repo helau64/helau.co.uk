@@ -8,10 +8,18 @@
     @include container;
 }
 
+.navbar {
+    width: 25%;
+}
+
 main {
-    display: flex;
     flex-grow: 1;
+    width: 75%;
     > div {
         width: 100%;
     }
+}
+
+header {
+    width: 100%;
 }

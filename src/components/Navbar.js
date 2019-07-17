@@ -1,9 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
-import instagram from '../img/social/instagram.svg'
-import twitter from '../img/social/twitter.svg'
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -56,43 +52,27 @@ const Navbar = class extends React.Component {
           className={`navbar-menu ${this.state.navBarActiveClass}`}
         >
           <li>
-            <Link to="/" className="navbar-item">Home</Link>
+            <Link to="/" className="navbar__item--logo">helau</Link>
           </li>
           <li>
-            <Link className="navbar-item" to="/portfolio">
+            <Link className="navbar__item" to="/portfolio">
               Portfolio
             </Link>
           </li>
           <li>
-            <Link className="navbar-item" to="/blog">
+            <Link className="navbar__item" to="/blog">
               Blog
             </Link>
           </li>
-          <li className="navbar-item" >
-            <a
-              href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="icon" >
-                <img src={github} alt="Github" style={{ width: '1em', height: '1em' }} />
-              </span>
+          <li>
+            <a href="/" className="navbar__item">
+              Shop
             </a>
-            <a title="twitter" href="https://twitter.com">
-              <img
-                className="fas fa-lg"
-                src={twitter}
-                alt="Twitter"
-                style={{ width: '1em', height: '1em' }}
-              />
-            </a>
-            <a title="instagram" href="https://instagram.com">
-              <img
-                src={instagram}
-                alt="Instagram"
-                style={{ width: '1em', height: '1em' }}
-              />
-            </a>
+          </li>
+          <li>
+            <Link className="navbar__item" to="/about">
+              About
+            </Link>
           </li>
         </ul>
       </nav>
