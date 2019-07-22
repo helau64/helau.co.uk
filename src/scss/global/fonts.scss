@@ -1,23 +1,23 @@
 @font-face {
-    font-family: 'SofiaPro Regular';
-    src: url("./../fonts/SofiaProRegular.eot") format('embedded-opentype'),
-         url("./../fonts/SofiaProRegular.ttf") format('truetype');
+    font-family: 'Metropolis Medium';
+    src: url("./../fonts/Metropolis/WOFF2/Metropolis-Medium.woff2") format('woff2'),
+         url("./../fonts/Metropolis/WOFF/Metropolis-Medium.woff") format('woff');
     font-weight: normal;
     font-style: normal;
 }
-  
+
 @font-face {
-    font-family: 'SofiaPro Light';
-    src: url("./../fonts/SofiaProLight.eot") format('embedded-opentype'),
-            url("./../fonts/SofiaProLight.ttf") format('truetype');
+    font-family: 'Metropolis SemiBold';
+    src: url("./../fonts/Metropolis/WOFF2/Metropolis-SemiBold.woff2") format('woff2'),
+         url("./../fonts/Metropolis/WOFF/Metropolis-SemiBold.woff") format('woff');
     font-weight: normal;
     font-style: normal;
 }
-  
+
 @font-face {
-    font-family: 'SofiaPro SemiBold';
-    src: url("./../fonts/SofiaProSemiBold.eot") format('embedded-opentype'),
-         url("./../fonts/SofiaProSemiBold.ttf") format('truetype');
+    font-family: 'Metropolis Light';
+    src: url("./../fonts/Metropolis/WOFF2/Metropolis-Light.woff2") format('woff2'),
+         url("./../fonts/Metropolis/WOFF/Metropolis-Light.woff") format('woff');
     font-weight: normal;
     font-style: normal;
 }
