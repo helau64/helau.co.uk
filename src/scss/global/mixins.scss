@@ -5,7 +5,7 @@
 }
 
 @mixin light {
-    font-family: "Metropolis Light", Helvetica, sans-serif;
+    font-family: "Metropolis Regular", Helvetica, sans-serif;
     font-weight: 400;
     font-style: normal;
 }
@@ -14,6 +14,12 @@
     font-family: "Metropolis SemiBold", Helvetica, sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+@mixin bold-italic {
+  font-family: "Metropolis SemiBold Italic", Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 @mixin base {

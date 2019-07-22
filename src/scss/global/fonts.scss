@@ -15,9 +15,25 @@
 }
 
 @font-face {
-    font-family: 'Metropolis Light';
-    src: url("./../fonts/Metropolis/WOFF2/Metropolis-Light.woff2") format('woff2'),
-         url("./../fonts/Metropolis/WOFF/Metropolis-Light.woff") format('woff');
+    font-family: 'Metropolis SemiBold Italic';
+    src: url("./../fonts/Metropolis/WOFF2/Metropolis-SemiBoldItalic.woff2") format('woff2'),
+         url("./../fonts/Metropolis/WOFF/Metropolis-SemiBoldItalic.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Metropolis Regular';
+    src: url("./../fonts/Metropolis/WOFF2/Metropolis-Regular.woff2") format('woff2'),
+         url("./../fonts/Metropolis/WOFF/Metropolis-Regular.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Metropolis ExtraBold';
+    src: url("./../fonts/Metropolis/WOFF2/Metropolis-ExtraBold.woff2") format('woff2'),
+         url("./../fonts/Metropolis/WOFF/Metropolis-ExtraBold.woff") format('woff');
     font-weight: normal;
     font-style: normal;
 }

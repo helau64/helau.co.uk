@@ -12,12 +12,17 @@
                 margin-left: 0;
             }
         }
+        &--logo {
+            font-family: "Metropolis ExtraBold", Helvetica, sans-serif;
+            text-decoration: none;
+            font-size: rem(60px);
+        }
     }
 }
 
 .navbar-menu {
     @include unlist;
-    margin-top: rem($padding-base) * 3;
+    margin-top: rem($padding-base) * 2;
     @include max-width(sm) {
         display: none;
         position: absolute;
@@ -31,6 +36,8 @@
         }
     }
 }
+
+//// Navbar Burger ////
 
 .navbar-burger {
     color: $blue;

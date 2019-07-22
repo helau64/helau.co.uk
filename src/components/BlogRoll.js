@@ -18,7 +18,7 @@ class BlogRoll extends React.Component {
                     </Link>
                     <span className="subtitle">{post.frontmatter.date}</span>
                 </header>
-                <p>{post.excerpt}</p>
+                <p class="excerpt">{post.excerpt}</p>
                 <Link to={post.fields.slug}>
                   Keep Reading →
                 </Link>

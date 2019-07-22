@@ -3,7 +3,7 @@ h1, h2, h3, h4, h5 {
 }
 
 h1, h2, h3, h4 {
-    @include bold;
+    @include bold-italic;
     margin: 0.5em 0;
 }
 
@@ -33,6 +33,7 @@ b, strong, .bold {
 
 a {
     color: $blue;
+    text-underline-position: under;
     &:hover, &:focus {
         text-decoration: none;
     } 
