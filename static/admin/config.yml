@@ -34,7 +34,9 @@ collections:
       - label: "Images"
         name: "images"
         widget: list
-        field: {label: Image, name: image, widget: image}
+        fields: 
+          - {label: Image, name: image, widget: image}
+          - {label: "Alt Text", name: altText, widget: string}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
   - name: "pages"
