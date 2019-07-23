@@ -39,8 +39,8 @@ collections:
             name: portfolioImage
             widget: object
             fields:
-              - {label: Alt, name: alt, widget: string}
               - {label: Image, name: image, widget: image}
+              - {label: Alt, name: alt, widget: string}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
   - name: "pages"
