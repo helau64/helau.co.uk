@@ -1,0 +1,27 @@
+.portfolio-item {
+    .title {
+        @include h2;
+        margin-bottom: 0;
+        line-height: 1.25;
+    }
+    .date {
+        @include light;
+    }
+}
+
+.portfolio-item {
+    display: flex;
+    height: 100%;
+    &__image-wrapper, &__text-wrapper {
+        width: 50%;
+        padding-top: $padding-base;
+        padding-bottom: $padding-base;
+    }
+    &__text-wrapper {
+        border-left: 2px dashed $blue;
+        padding-left: $padding-base;
+    }
+    &__image-wrapper {
+        padding-right: $padding-base;
+    }
+}

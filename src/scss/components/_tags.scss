@@ -30,3 +30,15 @@
         }
     }
 }
+
+.tag-list--portfolio-item {
+    @include unlist;
+    @include light;
+    margin: rem(10px) 0;
+    li {
+        display: inline-block;
+    }
+    span {
+        margin: 0 rem(5px);
+    }
+}

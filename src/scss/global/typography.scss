@@ -3,7 +3,7 @@ h1, h2, h3, h4, h5 {
 }
 
 h1, h2, h3, h4 {
-    @include bold-italic;
+    @include bold;
     margin: 0.5em 0;
 }
 
@@ -37,6 +37,10 @@ a {
     &:hover, &:focus {
         text-decoration: none;
     } 
+}
+
+.bold-italic {
+    @include bold-italic;
 }
 
 .color-red {
