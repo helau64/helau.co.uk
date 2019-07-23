@@ -28,13 +28,15 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "portfolio-item"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Date", name: "date", widget: "date", format: "YYYY"}
       - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
       - {label: "Thumbnail", name: "featuredimage", widget: image}
       - label: "Images"
         name: "images"
         widget: list
-        field: {label: Image, name: image, widget: image}
+        fields: 
+          - {label: Image, name: image, widget: image}
+          - {label: "Alt Text", name: altText, widget: string}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
   - name: "pages"
