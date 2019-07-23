@@ -11,22 +11,12 @@ export const PortfolioItemTemplate = ({
   tags,
   title,
   date,
-  images
 }) => {
   const PostContent = contentComponent || Content
 
   return (
     <section className="portfolio-item">
       <div className="portfolio-item__image-wrapper">
-        {images && images.length ? (
-          <ul className="tag-list--portfolio-item">
-            {images.map((image, i) => (
-              <li key={i}>
-                <img src={`url(${!!image.childImageSharp ? image.childImageSharp.fluid.src : image})`} />
-              </li>
-            ))}
-          </ul>
-        ) : null}
       </div>
       <article className="portfolio-item__text-wrapper">
         <header>
@@ -54,7 +44,6 @@ PortfolioItemTemplate.propTypes = {
   contentComponent: PropTypes.func,
   title: PropTypes.string,
   date: PropTypes.string,
-  images: PropTypes.array
 }
 
 const PortfolioItem = ({ data }) => {
@@ -68,7 +57,6 @@ const PortfolioItem = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         date={post.frontmatter.date}
-        images={post.frontmatter.images}
       />
     </Layout>
   )
@@ -93,13 +81,6 @@ export const pageQuery = graphql`
         date(formatString: "YYYY")
         title
         tags
-        images {
-          childImageSharp {
-            fluid(maxWidth: 500, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
       }
     }
   }
