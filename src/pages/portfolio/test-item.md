@@ -4,7 +4,16 @@ title: 'Just in: small batch of Jamaican Blue Mountain in store next week'
 date: 2017-01-04T15:04:10.000Z
 featuredpost: true
 featuredimage: /img/blog-index.jpg
-images: []
+images:
+  - images:
+      alt: moka
+      image: /img/blog-index.jpg
+  - images:
+      alt: cup
+      image: /img/products-full-width.jpg
+  - images:
+      alt: cup
+      image: /img/products-grid2.jpg
 tags:
   - jamaica
   - green beans
