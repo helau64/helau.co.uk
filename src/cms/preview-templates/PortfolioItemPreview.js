@@ -5,7 +5,6 @@ import { PortfolioItemTemplate } from '../../templates/portfolio-item'
 const PortfolioItemPreview = ({ entry, widgetFor }) => (
   <PortfolioItemTemplate
     content={widgetFor('body')}
-    description={entry.getIn(['data', 'description'])}
     tags={entry.getIn(['data', 'tags'])}
     title={entry.getIn(['data', 'title'])}
   />

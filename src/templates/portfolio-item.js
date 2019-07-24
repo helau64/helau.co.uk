@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
-class PortfolioItemTemplate extends React.Component {
+export class PortfolioItemTemplate extends React.Component {
 
   componentDidMount() {
     this.setPortfolioContentWidth()
