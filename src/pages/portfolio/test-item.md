@@ -7,6 +7,8 @@ featuredimage: /img/blog-index.jpg
 images:
   - alt: moka
     image: /img/blog-index.jpg
+  - alt: chemex
+    image: /img/chemex.jpg
 tags:
   - jamaica
   - green beans
