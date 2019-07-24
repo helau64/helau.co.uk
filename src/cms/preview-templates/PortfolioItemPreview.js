@@ -10,7 +10,6 @@ const PortfolioItemPreview = ({ entry, widgetFor }) => {
       content={widgetFor('body')}
       tags={entry.getIn(['data', 'tags'])}
       title={entry.getIn(['data', 'title'])}
-      images={{ images }}
     />
   )
 }
