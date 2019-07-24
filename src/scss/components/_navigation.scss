@@ -20,6 +20,12 @@
     }
 }
 
+.navbar-content {
+    @include min-width(sm) {
+        position: fixed;
+    }
+}
+
 .navbar-menu {
     @include unlist;
     margin-top: rem($padding-base) * 2;

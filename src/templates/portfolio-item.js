@@ -15,7 +15,16 @@ export const PortfolioItemTemplate = ({
   images
 }) => {
   const PostContent = contentComponent || Content
-  console.log(images)
+
+  function setPortfolioContentWidth() {
+    var width = document.querySelector('.portfolio-item__text-wrapper').offsetWidth - 20;
+    document.querySelector('.portfolio-item__content').style.width = `${width}px`;
+  }
+
+  setPortfolioContentWidth();
+  
+  window.addEventListener('resize', setPortfolioContentWidth);
+  
   return (
     <section className="portfolio-item">
       <div className="portfolio-item__image-wrapper">
@@ -30,21 +39,23 @@ export const PortfolioItemTemplate = ({
           ) : null}
       </div>
       <article className="portfolio-item__text-wrapper">
-        <header>
-          <h1 className="title">{title}</h1>
-          {tags && tags.length ? (
-              <ul className="tag-list--portfolio-item">
-                {tags.map((tag, i, arr) => (
-                  <li key={tag + `tag`}>
-                    <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    {(arr.length -1 !== i ? <span>/</span> : null)}
-                  </li>
-                ))}
-              </ul>
-          ) : null}
-          <span className="date">{date}</span>
-        </header>
-        <PostContent content={content} />
+        <div className="portfolio-item__content">
+          <header>
+            <h1 className="title">{title}</h1>
+            {tags && tags.length ? (
+                <ul className="tag-list--portfolio-item">
+                  {tags.map((tag, i, arr) => (
+                    <li key={tag + `tag`}>
+                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      {(arr.length -1 !== i ? <span>/</span> : null)}
+                    </li>
+                  ))}
+                </ul>
+            ) : null}
+            <span className="date">{date}</span>
+          </header>
+          <PostContent content={content} />
+        </div>
       </article>
     </section>
   )

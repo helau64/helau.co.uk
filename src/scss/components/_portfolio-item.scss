@@ -1,4 +1,6 @@
 .portfolio-item {
+    display: flex;
+    height: 100%;
     .title {
         @include h2;
         margin-bottom: 0;
@@ -10,27 +12,52 @@
 }
 
 .portfolio-item {
-    display: flex;
-    height: 100%;
     &__image-wrapper, &__text-wrapper {
-        width: 50%;
-        padding-top: $padding-base;
-        padding-bottom: $padding-base;
+        width: 100%;
     }
-    &__text-wrapper {
-        border-left: 2px dashed $blue;
-        padding-left: $padding-base;
-    }
-    &__image-wrapper {
-        padding-right: $padding-base;
+    &__image-list {
+        @include unlist;
+        li:not(:last-of-type) {
+            margin-bottom: $padding-base;
+        }
     }
 }
 
 .portfolio-item {
-    &__image-list {
-        @include unlist;
-        li {
-            margin-bottom: $padding-base;
+    @include between-widths(sm, md) {
+        &__image-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: $padding-base;
+            .gatsby-image-wrapper {
+                top: 50%;
+                transform: translateY(-50%) !important;
+            }
+        }
+    }
+    @include max-width(md) {
+        flex-direction: column;
+        &__text-wrapper {
+            order: -1;
+        }
+    }
+    @include min-width(md) {
+        &__image-wrapper, &__text-wrapper {
+            width: 50%;
+        }
+        &__image-wrapper {
+            padding-right: $padding-base;
+        }
+        &__text-wrapper {
+            height: 100%;
+        }
+        &__content {
+            position: fixed;
+            border-left: 2px dashed $blue;
+            padding-left: $padding-base;
+            height: calc(100% - 80px);
+            max-width: rem(470px);
+            overflow-y: auto;
         }
     }
 }
