@@ -31,16 +31,7 @@ collections:
       - {label: "Date", name: "date", widget: "date", format: "YYYY"}
       - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
       - {label: "Thumbnail", name: "featuredimage", widget: image}
-      - label: Images
-        name: images
-        widget: list
-        fields:
-          - label: Image
-            name: image
-            widget: object
-            fields:
-              - {label: Image, name: img, widget: image}
-              - {label: Alt, name: alt, widget: string}
+      - {label: Images, name: images, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
   - name: "pages"
