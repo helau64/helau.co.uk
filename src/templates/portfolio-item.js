@@ -11,7 +11,6 @@ export const PortfolioItemTemplate = ({
   tags,
   title,
   date,
-  images
 }) => {
   const PostContent = contentComponent || Content
   console.log(images)
@@ -45,7 +44,6 @@ PortfolioItemTemplate.propTypes = {
   contentComponent: PropTypes.func,
   title: PropTypes.string,
   date: PropTypes.string,
-  images: PropTypes.array
 }
 
 const PortfolioItem = ({ data }) => {
@@ -59,7 +57,6 @@ const PortfolioItem = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         date={post.frontmatter.date}
-        images={post.frontmatter.images}
       />
     </Layout>
   )
@@ -84,7 +81,6 @@ export const pageQuery = graphql`
         date(formatString: "YYYY")
         title
         tags
-        images
       }
     }
   }
