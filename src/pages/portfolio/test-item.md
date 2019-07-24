@@ -9,6 +9,10 @@ images:
     image: /img/blog-index.jpg
   - alt: chemex
     image: /img/chemex.jpg
+  - alt: beans
+    image: /img/products-grid1.jpg
+  - alt: pour
+    image: /img/flavor_wheel.jpg
 tags:
   - jamaica
   - green beans
