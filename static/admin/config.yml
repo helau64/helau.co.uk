@@ -31,12 +31,12 @@ collections:
       - {label: "Date", name: "date", widget: "date", format: "YYYY"}
       - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
       - {label: "Thumbnail", name: "featuredimage", widget: image}
-      - label: "Images"
-        name: "images"
+      - label: Images
+        name: images
         widget: list
         field:
-          - label: Image
-            name: portfolioImage
+          - label: Images
+            name: images
             widget: object
             fields:
               - {label: Image, name: image, widget: image}
