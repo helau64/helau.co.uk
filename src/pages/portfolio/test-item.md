@@ -5,15 +5,15 @@ date: 2017-01-04T15:04:10.000Z
 featuredpost: true
 featuredimage: /img/blog-index.jpg
 images:
-  - images:
+  - image:
       alt: moka
-      image: /img/blog-index.jpg
-  - images:
+      img: /img/blog-index.jpg
+  - image:
       alt: cup
-      image: /img/products-full-width.jpg
-  - images:
-      alt: cup
-      image: /img/products-grid2.jpg
+      img: /img/products-grid2.jpg
+  - image:
+      alt: filter
+      img: /img/products-grid3.jpg
 tags:
   - jamaica
   - green beans
