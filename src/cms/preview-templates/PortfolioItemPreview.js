@@ -5,7 +5,7 @@ import { PortfolioItemTemplate } from '../../templates/portfolio-item'
 const PortfolioItemPreview = ({ entry, widgetFor }) => {
   const entryImages = entry.getIn(['data', 'images'])
   const images = entryImages ? entryImages.toJS() : []
-
+  console.log(images)
   return (
     <PortfolioItemTemplate
       content={widgetFor('body')}
