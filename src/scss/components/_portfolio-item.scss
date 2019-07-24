@@ -25,3 +25,12 @@
         padding-right: $padding-base;
     }
 }
+
+.portfolio-item {
+    &__image-list {
+        @include unlist;
+        li {
+            margin-bottom: $padding-base;
+        }
+    }
+}
