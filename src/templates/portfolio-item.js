@@ -13,7 +13,6 @@ export const PortfolioItemTemplate = ({
   date,
 }) => {
   const PostContent = contentComponent || Content
-  console.log(images)
   return (
     <section className="portfolio-item">
       <div className="portfolio-item__image-wrapper">
