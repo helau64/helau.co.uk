@@ -23,6 +23,9 @@
 .navbar-content {
     @include min-width(sm) {
         position: fixed;
+        overflow-y: auto;
+        height: calc(100% - 80px);
+        padding-right: rem($padding-base);
     }
 }
 
