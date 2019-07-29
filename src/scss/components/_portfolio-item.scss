@@ -1,10 +1,11 @@
 .portfolio-item {
     display: flex;
     height: 100%;
-    .title {
+    .page-title {
         @include h2;
         margin-bottom: 0;
         line-height: 1.25;
+        margin-top: 0.5em;
     }
     .date {
         @include light;

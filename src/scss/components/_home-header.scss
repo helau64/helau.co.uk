@@ -1,9 +1,16 @@
 .home-page {
-    height: 100%;
+    
     @include min-width(sm) {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        height: 100%;
+    }
+    @include max-width(sm) {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding-right: rem($padding-base);
     }
 }
 
@@ -12,7 +19,13 @@
         font-size: 10vw;
         margin: 0 rem($padding-base);
         @include min-width(lg) {
-            font-size: rem(140px);
+            font-size: rem(130px);
+        }
+        @include max-width(sm) {
+            font-size: 14vw;
+        }
+        @include max-width(xs) {
+            font-size: 10vw;
         }
     }
     &__subtitle {
@@ -20,6 +33,12 @@
         margin: 0 rem($padding-base);
         @include min-width(lg) {
             font-size: rem(120px);
+        }
+        @include max-width(sm) {
+            font-size: 10vw;
+        }
+        @include max-width(xs) {
+            font-size: 8vw;
         }
     }
 }

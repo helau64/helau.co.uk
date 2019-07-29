@@ -1,15 +1,34 @@
+.tag-page {
+    &__title {
+        @include bold-italic;
+    }
+}
+
+.tag-list--all-tags {
+    li {
+        margin-bottom: rem(10px);
+    }
+}
+
 .tag-list--tag-page {
     @include unlist;
     margin-bottom: rem($padding-base);
     &__tag {
         border-bottom: 2px dashed $blue;
+        padding-top: rem(5px);
         h2 {
             @include h4;
-            margin-bottom: 0;
+            margin-bottom: rem(5px);
+            text-decoration: underline;
+            text-decoration-color: $blue;
         }
         a {
             display: block;
-            padding-bottom: rem($padding-base);
+            padding-bottom: rem($padding-base / 2);
+            text-decoration: none;
+            &:hover h2 {
+                text-decoration: none;
+            }
         }
         span {
             @include base;

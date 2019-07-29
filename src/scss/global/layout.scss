@@ -5,8 +5,8 @@
 
 .site-wrapper {
     @include container;
-    display: grid;
     @include min-width(sm) {
+        display: grid;
         grid-template-columns: 1fr 4fr;
     }
     
@@ -18,7 +18,14 @@
 
 main {
     flex-grow: 1;
-    padding: rem($padding-base) * 2 0;
+    // position: relative;
+    padding: rem($padding-base) 0;
+    @include min-width(sm) {
+        padding: rem($padding-base) * 2 0 rem($padding-base) * 2 rem($padding-base);
+    }
+    @include min-width(md) {
+        padding: rem($padding-base) * 2;
+    }
 }
 
 header {

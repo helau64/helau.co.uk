@@ -1,7 +1,12 @@
 .navbar {
-    padding: rem($padding-base) * 3 rem($padding-base) rem($padding-base) 0;
-    @include max-width(sm) {
-        display: flex;
+    display: block;
+    padding-top: rem($padding-base);
+    border-bottom: 2px dashed $blue;
+    @include min-width(sm) {
+        border-right: 2px dashed $blue;
+        border-bottom: none;
+        padding: rem($padding-base) * 2 rem($padding-base) rem($padding-base) 0;
+        display: block;
     }
     &__item {
         display: block;
@@ -41,6 +46,11 @@
         overflow-y: auto;
         height: calc(100% - 80px);
         padding-right: rem($padding-base);
+    }
+    @include max-width(sm) {
+        display: flex;
+        width: 100%;
+    
     }
 }
 
