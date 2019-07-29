@@ -6,11 +6,26 @@
     &__item {
         display: block;
         margin-bottom: rem($padding-base) / 2;
-        &--icons a {
-            margin: 0 rem(5px);
-            &:first-of-type {
-                margin-left: 0;
+        &--icons  {
+            position: relative;
+            top: rem(5px);
+            svg {
+                width: rem(20px);
+                height: auto;
+                path {
+                    fill: $blue;
+                }
+                &:hover path {
+                    fill: darken($blue, 25%);
+                }
             }
+            a {
+                margin: 0 rem(5px);
+                &:first-of-type {
+                    margin-left: 0;
+                }
+            }
+            
         }
         &--logo {
             font-family: "Metropolis ExtraBold", Helvetica, sans-serif;

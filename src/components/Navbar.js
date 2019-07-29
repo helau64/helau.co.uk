@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import instagram from '../img/social/instagram.svg'
-import twitter from '../img/social/twitter.svg'
-import github from '../img/github-icon.svg'
+import Instagram from '../images/svg-icons/instagram.svg';
+import Twitter from '../images/svg-icons/twitter.svg';
+import GitHub from '../images/svg-icons/github.svg';
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -73,47 +73,35 @@ const Navbar = class extends React.Component {
               </a>
             </li>
             <li className="navbar__item navbar__item--icons">
-              <a 
-                title="twitter" 
+              <a
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Twitter"
               >
-                <img
-                  className="fas fa-lg"
-                  src={twitter}
-                  alt="Twitter"
-                  style={{ width: '1em', height: '1em' }}
-                />
+                <Twitter />
               </a>
               /
               <a 
-                title="instagram" 
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
               >
-                <img
-                  src={instagram}
-                  alt="Instagram"
-                  style={{ width: '1em', height: '1em' }}
-                />
+                <Instagram />
               </a>
               /
               <a
                   href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="GitHub"
                 >
-                  <img 
-                    src={github} 
-                    alt="Github" 
-                    style={{ width: '1em', height: '1em' }}
-                  />
+                  <GitHub />
                 </a>
             </li>
             <li className="navbar__item">
-              <a>hi@helau.co.uk</a>
+              <a href="mailto:hi@helau.co.uk">hi@helau.co.uk</a>
             </li>
           </ul>
         </div>
