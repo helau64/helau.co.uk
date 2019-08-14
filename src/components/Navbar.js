@@ -67,14 +67,14 @@ const Navbar = class extends React.Component {
             </Link>
           </li>
           <li>
-            <a href="/" className="navbar__item">
+            <a href="https://www.etsy.com/uk/shop/helau64" className="navbar__item">
               Shop
             </a>
           </li>
           <li className="navbar__item navbar__item--icons">
             <a 
               title="twitter" 
-              href="https://twitter.com"
+              href="https://twitter.com/helau64/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -88,7 +88,7 @@ const Navbar = class extends React.Component {
             /
             <a 
               title="instagram" 
-              href="https://instagram.com"
+              href="https://www.instagram.com/helau64/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -100,7 +100,7 @@ const Navbar = class extends React.Component {
             </a>
             /
             <a
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
+                href="https://github.com/helau64"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -112,7 +112,7 @@ const Navbar = class extends React.Component {
               </a>
           </li>
           <li className="navbar__item">
-            <a>hi@helau.co.uk</a>
+            <a href="mailto:hi@helau.co.uk">hi@helau.co.uk</a>
           </li>
         </ul>
       </nav>
