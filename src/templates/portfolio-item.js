@@ -1,57 +1,70 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
-import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
-export const PortfolioItemTemplate = ({
-  content,
-  contentComponent,
-  description,
-  tags,
-  title,
-  helmet,
-}) => {
-  const PostContent = contentComponent || Content
+export class PortfolioItemTemplate extends React.Component {
 
-  return (
-    <section className="section">
-      {helmet || ''}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+  componentDidMount() {
+    this.setPortfolioContentWidth()
+    window.addEventListener('resize', this.setPortfolioContentWidth);
+  }
+
+  setPortfolioContentWidth() {
+    var width = document.querySelector('.portfolio-item__text-wrapper').offsetWidth - 20;
+    document.querySelector('.portfolio-item__content').style.width = `${width}px`;
+  }
+
+  render() {
+    const data = this.props;
+    const PostContent = data.contentComponent || Content;
+    
+    return (
+      <section className="portfolio-item">
+        <div className="portfolio-item__image-wrapper">
+          {data.images && data.images.length ? (
+                <ul className="portfolio-item__image-list">
+                  {data.images.map((image, i) => (
+                    <li key={i}>
+                      <PreviewCompatibleImage imageInfo={image} />
                     </li>
                   ))}
                 </ul>
-              </div>
             ) : null}
-          </div>
         </div>
-      </div>
-    </section>
-  )
+        <article className="portfolio-item__text-wrapper">
+          <div className="portfolio-item__content">
+            <header>
+              <h1 className="page-title">{data.title}</h1>
+              {data.tags && data.tags.length ? (
+                  <ul className="tag-list--portfolio-item">
+                    {data.tags.map((tag, i, arr) => (
+                      <li key={tag + `tag`}>
+                        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                        {(arr.length -1 !== i ? <span>/</span> : null)}
+                      </li>
+                    ))}
+                  </ul>
+              ) : null}
+              <span className="date">{data.date}</span>
+            </header>
+            <PostContent content={data.content} />
+          </div>
+        </article>
+      </section>
+    )
+  }
 }
 
 PortfolioItemTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
-  description: PropTypes.string,
   title: PropTypes.string,
-  helmet: PropTypes.object,
+  date: PropTypes.string,
+  images: PropTypes.array
 }
 
 const PortfolioItem = ({ data }) => {
@@ -62,18 +75,10 @@ const PortfolioItem = ({ data }) => {
       <PortfolioItemTemplate
         content={post.html}
         contentComponent={HTMLContent}
-        description={post.frontmatter.description}
-        helmet={
-          <Helmet titleTemplate="%s | Blog">
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
-          </Helmet>
-        }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        date={post.frontmatter.date}
+        images={post.frontmatter.images}
       />
     </Layout>
   )
@@ -81,7 +86,9 @@ const PortfolioItem = ({ data }) => {
 
 PortfolioItem.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.object,
+    }),
   }),
 }
 
@@ -93,10 +100,19 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY")
         title
-        description
         tags
+        images {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 240, quality: 64) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          alt
+        }
       }
     }
   }

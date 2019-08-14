@@ -3,7 +3,7 @@ h1, h2, h3, h4, h5 {
 }
 
 h1, h2, h3, h4 {
-    @include bold-italic;
+    @include bold;
     margin: 0.5em 0;
 }
 
@@ -39,10 +39,18 @@ a {
     } 
 }
 
+.bold-italic {
+    @include bold-italic;
+}
+
 .color-red {
     color: $red;
 }
 
 .color-blue {
     color: $blue;
+}
+
+.page-title {
+    margin-top: 0;
 }
