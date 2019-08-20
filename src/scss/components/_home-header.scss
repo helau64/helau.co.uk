@@ -1,5 +1,4 @@
 .home-page {
-    
     @include min-width(sm) {
         display: flex;
         flex-direction: column;
@@ -15,6 +14,7 @@
 }
 
 .header--home {
+    background-color: white;
     &__title {
         font-size: 10vw;
         margin: 0 rem($padding-base);
