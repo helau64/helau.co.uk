@@ -34,9 +34,10 @@ b, strong, .bold {
 a {
     color: $blue;
     text-underline-position: under;
-    &:hover, &:focus {
-        text-decoration: none;
-    } 
+    text-decoration: none;
+    &:hover, &:focus, &:active {
+        text-decoration: underline;
+    }
 }
 
 .bold-italic {

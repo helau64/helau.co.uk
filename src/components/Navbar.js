@@ -41,73 +41,70 @@ const Navbar = class extends React.Component {
         role="navigation"
         aria-label="main-navigation"
       >
-        <div className="navbar-content">
-          <Link to="/" className="navbar__item navbar__item--logo">helau</Link>
-          {/* Hamburger menu */}
-          <div
-            className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-            data-target="navMenu"
-            onClick={() => this.toggleHamburger()}
-          >
-            <span />
-            <span />
-            <span />
-          </div>
-          <ul
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
-            <li>
-              <Link className="navbar__item" to="/portfolio">
-                Portfolio
-              </Link>
-            </li>
-            <li>
-              <Link className="navbar__item" to="/blog">
-                Blog
-              </Link>
-            </li>
-            <li>
-              <a href="https://www.etsy.com/uk/shop/helau64" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="navbar__item">
-                Shop
-              </a>
-            </li>
-            <li className="navbar__item navbar__item--icons">
-              <a
-                href="https://twitter.com/helau64"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter"
-              >
-                <Twitter />
-              </a>
-              /
-              <a 
-                href="https://instagram.com/helau64"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <Instagram />
-              </a>
-              /
-              <a
-                  href="https://github.com/helau64"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub"
-                >
-                  <GitHub />
-                </a>
-            </li>
-            <li className="navbar__item">
-              <a href="mailto:hi@helau.co.uk">hi@helau.co.uk</a>
-            </li>
-          </ul>
+        <Link to="/" className="navbar__item navbar__item--logo">helau</Link>
+        {/* Hamburger menu */}
+        <div
+          className={`navbar-burger burger ${this.state.navBarActiveClass}`}
+          data-target="navMenu"
+          onClick={() => this.toggleHamburger()}
+        >
+          <span />
+          <span />
+          <span />
         </div>
+        <ul
+          id="navMenu"
+          className={`navbar-menu ${this.state.navBarActiveClass}`}
+        >
+          <li>
+            <Link className="navbar__item" to="/portfolio">
+              Portfolio
+            </Link>
+          </li>
+          <li>
+            <a href="https://www.etsy.com/uk/shop/helau64" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="navbar__item">
+              Shop
+            </a>
+          </li>
+          <hr></hr>
+          <li className="navbar__item">
+            <a
+              href="https://twitter.com/helau64"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              Twitter
+            </a>
+          </li>
+          <li className="navbar__item">
+            <a 
+              href="https://instagram.com/helau64"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              Instagram
+            </a>
+          </li>
+          <li className="navbar__item">
+            <a
+                href="https://github.com/helau64"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                GitHub
+              </a>
+          </li>
+          <hr></hr>
+          <li className="navbar__item">
+            <a href="mailto:hi@helau.co.uk">hi@helau.co.uk</a>
+          </li>
+        </ul>
       </nav>
     )
   }

@@ -5,11 +5,8 @@
 
 .site-wrapper {
     @include container;
-    @include min-width(sm) {
-        display: grid;
-        grid-template-columns: 1fr 4fr;
-    }
-    
+    display: grid;
+    grid-template-columns: 1fr 4fr;
 }
 
 .navbar {
@@ -18,7 +15,6 @@
 
 main {
     flex-grow: 1;
-    // position: relative;
     padding: rem($padding-base) 0;
     @include min-width(sm) {
         padding: rem($padding-base) * 2 0 rem($padding-base) * 2 rem($padding-base);

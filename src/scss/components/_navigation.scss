@@ -11,27 +11,7 @@
     &__item {
         display: block;
         margin-bottom: rem($padding-base) / 2;
-        &--icons  {
-            position: relative;
-            top: rem(5px);
-            svg {
-                width: rem(20px);
-                height: auto;
-                path {
-                    fill: $blue;
-                }
-                &:hover path {
-                    fill: darken($blue, 25%);
-                }
-            }
-            a {
-                margin: 0 rem(5px);
-                &:first-of-type {
-                    margin-left: 0;
-                }
-            }
-            
-        }
+        font-size: rem(14px);
         &--logo {
             font-family: "Metropolis ExtraBold", Helvetica, sans-serif;
             text-decoration: none;
@@ -40,23 +20,12 @@
     }
 }
 
-.navbar-content {
-    @include min-width(sm) {
-        position: fixed;
-        overflow-y: auto;
-        height: calc(100% - 80px);
-        padding-right: rem($padding-base);
-    }
-    @include max-width(sm) {
-        display: flex;
-        width: 100%;
-    
-    }
-}
-
 .navbar-menu {
     @include unlist;
     margin-top: rem($padding-base) * 2;
+    hr {
+        border-top: 2px dashed $red;
+    }
     @include max-width(sm) {
         display: none;
         position: absolute;

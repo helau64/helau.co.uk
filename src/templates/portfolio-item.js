@@ -8,16 +8,6 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export class PortfolioItemTemplate extends React.Component {
 
-  componentDidMount() {
-    this.setPortfolioContentWidth()
-    window.addEventListener('resize', this.setPortfolioContentWidth);
-  }
-
-  setPortfolioContentWidth() {
-    var width = document.querySelector('.portfolio-item__text-wrapper').offsetWidth - 20;
-    document.querySelector('.portfolio-item__content').style.width = `${width}px`;
-  }
-
   render() {
     const data = this.props;
     const PostContent = data.contentComponent || Content;
