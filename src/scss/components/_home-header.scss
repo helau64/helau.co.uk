@@ -1,20 +1,25 @@
-.home-page {
-    @include min-width(sm) {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 100%;
-    }
+.header--home {
+    background-color: white;
+    display: block;
+    width: 100%;
+    padding-left: rem($padding-base) / 2;
+    margin-top: rem(225px);
+    box-shadow: 10px 10px 0px -1px $red;
     @include max-width(sm) {
+        padding-left: rem($padding-base) / 4;
+        box-shadow: 10px 10px 0px -3px $red;
+        margin-top: 0;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        padding-right: rem($padding-base);
     }
-}
-
-.header--home {
-    background-color: white;
+    @include max-width(xs) {
+        padding: rem($padding-base) / 4;
+        padding-top: rem($padding-base) / 2;
+    }
+    &__title, &__subtitle {
+        @include header;
+    }
     &__title {
         font-size: 10vw;
         margin: 0 rem($padding-base);
@@ -25,20 +30,22 @@
             font-size: 14vw;
         }
         @include max-width(xs) {
-            font-size: 10vw;
+            font-size: 12vw;
         }
     }
     &__subtitle {
         font-size: 8vw;
         margin: 0 rem($padding-base);
+        margin-top: rem(-20px);
         @include min-width(lg) {
             font-size: rem(120px);
         }
         @include max-width(sm) {
+            margin-top: rem(-5px);
             font-size: 10vw;
         }
         @include max-width(xs) {
-            font-size: 8vw;
+            font-size: 10vw;
         }
     }
 }

@@ -1,10 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import Instagram from '../images/svg-icons/instagram.svg';
-import Twitter from '../images/svg-icons/twitter.svg';
-import GitHub from '../images/svg-icons/github.svg';
-
 const Navbar = class extends React.Component {
   constructor(props) {
     super(props)

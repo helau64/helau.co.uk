@@ -1,13 +1,11 @@
 .portfolio-list {
     @include unlist;
+    margin-top: rem($padding-base) * 3;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: $padding-base;
     @include max-width(xs) {
         grid-template-columns: 1fr;
-    }
-    @include min-width(md) {
-        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 

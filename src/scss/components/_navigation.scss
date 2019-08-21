@@ -1,9 +1,10 @@
 .navbar {
     display: block;
     padding-top: rem($padding-base);
-    border-bottom: 2px dashed $blue;
+    border-bottom: 2px solid $blue;
+    position: relative;
     @include min-width(sm) {
-        border-right: 2px dashed $blue;
+        border-right: 2px solid $blue;
         border-bottom: none;
         padding: rem($padding-base) * 2 rem($padding-base) rem($padding-base) 0;
         display: block;
@@ -13,9 +14,10 @@
         margin-bottom: rem($padding-base) / 2;
         font-size: rem(14px);
         &--logo {
-            font-family: "ClearfaceStd-BlackItalic", Helvetica, sans-serif;
+            font-family: "ClearfaceStd-BlackItalic", sans-serif;
             text-decoration: none;
             font-size: rem(45px);
+            display: inline-block;
         }
     }
 }
@@ -24,16 +26,17 @@
     @include unlist;
     margin-top: rem($padding-base) * 2;
     hr {
-        border-top: 2px dashed $red;
+        border-top: 2px solid $red;
     }
     @include max-width(sm) {
         display: none;
         position: absolute;
         background-color: $pink;
-        width: 100%;
-        padding: rem($padding-base);
+        width: calc(100% + #{$padding-base});
+        margin-left: -$padding-base / 2;
+        padding: rem($padding-base) / 2;
         z-index: 3;
-        margin-top: rem(70px);
+        margin-top: rem($padding-base) / 2;
         &.is-active {
             display: block;
         }
@@ -45,11 +48,12 @@
 .navbar-burger {
     color: $blue;
     cursor: pointer;
-    display: block;
+    display: inline-block;
     height: 3.25rem;
-    position: relative;
     width: 3.25rem;
+    position: relative;
     margin-left: auto;
+    float: right;
     @include min-width(sm) {
         display: none;
     }
@@ -58,7 +62,7 @@
 .navbar-burger span {
     background-color: currentColor;
     display: block;
-    height: 1px;
+    height: 2px;
     left: calc(50% - 8px);
     position: absolute;
     -webkit-transform-origin: center;
