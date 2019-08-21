@@ -1,0 +1,10 @@
+.blog-post {
+    &__description {
+        padding: rem($padding-base) 0 rem($padding-base);
+        border-bottom: 2px solid $red;
+    }
+    &__info {
+        border-top: 2px solid $red;
+        padding-top: rem($padding-base);
+    }
+}

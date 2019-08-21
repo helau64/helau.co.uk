@@ -8,7 +8,7 @@ export default class BlogIndexPage extends React.Component {
     return (
       <Layout>
         <header>
-          <h1 class="bold-italic page-title">Blog</h1>
+          <h1 class="page-title">Blog</h1>
         </header>
         <article>
           <BlogRoll />

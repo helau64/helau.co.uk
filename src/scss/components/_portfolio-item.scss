@@ -10,6 +10,7 @@
     @include max-width(sm) {
         grid-template-columns: 1fr;
         grid-row-gap: $padding-base;
+        padding-top: rem($padding-base);
     }
     .page-title {
         @include h2;

@@ -1,9 +1,3 @@
-.tag-page {
-    &__title {
-        @include bold-italic;
-    }
-}
-
 .tag-list--all-tags {
     li {
         margin-bottom: rem(10px);
@@ -14,30 +8,32 @@
     @include unlist;
     margin-bottom: rem($padding-base);
     &__tag {
-        border-bottom: 2px solid $blue;
         padding-top: rem(5px);
+        border-bottom: 2px solid $blue;
         h2 {
             @include h4;
             margin-bottom: rem(5px);
-            text-decoration: underline;
-            text-decoration-color: $blue;
         }
         a {
             display: block;
             padding-bottom: rem($padding-base / 2);
             text-decoration: none;
             &:hover h2 {
-                text-decoration: none;
+                text-decoration: underline;
             }
         }
         span {
             @include base;
+            display: block;
+        }
+        .tag__page-date {
+            @include small;
+            @include light;
         }
     }
 }
 
 .tag-list--blog-post {
-    margin-top: rem($padding-base) * 1.5;
     ul {
         @include unlist;
     }

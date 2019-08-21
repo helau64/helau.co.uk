@@ -13,27 +13,31 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  date
 }) => {
   const PostContent = contentComponent || Content
 
   return (
-    <section className="section">
+    <section className="section blog-post">
       {helmet || ''}
         <h1 className="page-title">{title}</h1>
-        <p>{description}</p>
+        <p className="blog-post__description">{description}</p>
         <PostContent content={content} />
-        {tags && tags.length ? (
-          <div className="tag-list--blog-post">
-            <h4>Tags</h4>
-            <ul>
-              {tags.map(tag => (
-                <li className="tag-list__tag" key={tag + `tag`}>
-                  <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
+        <div class="blog-post__info">
+          <span class="blog-post__date">{date}</span>
+          {tags && tags.length ? (
+            <div className="tag-list--blog-post">
+              <h4>Tags</h4>
+              <ul>
+                {tags.map(tag => (
+                  <li className="tag-list__tag" key={tag + `tag`}>
+                    <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </div>
     </section>
   )
 }
@@ -44,6 +48,7 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
+  date: PropTypes.string
 }
 
 const BlogPost = ({ data }) => {
@@ -55,6 +60,7 @@ const BlogPost = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
+        date={post.frontmatter.date}
         helmet={
           <Helmet titleTemplate="%s | Blog">
             <title>{`${post.frontmatter.title}`}</title>
