@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import Navbar from '../components/Navbar'
 
 import '../scss/main.scss'
+import '../../node_modules/focus-visible/dist/focus-visible.min.js'
 
 import useSiteMetadata from './SiteMetadata'
 

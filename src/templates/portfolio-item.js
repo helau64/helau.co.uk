@@ -5,26 +5,52 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import Img from "gatsby-image"
 
 export class PortfolioItemTemplate extends React.Component {
 
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      activeItem: 0
+    }
+
+    this.setActiveItem = this.setActiveItem.bind(this)
+  }
+
+  setActiveItem(activeItemIndex) {
+    this.setState({
+      activeItem: activeItemIndex
+    })
+  }
+
   render() {
-    const data = this.props;
-    const PostContent = data.contentComponent || Content;
-    
+    const data = this.props
+    const PostContent = data.contentComponent || Content
+
     return (
       <section className="portfolio-item">
         <div className="portfolio-item__image-wrapper">
+
           {data.images && data.images.length ? (
-                <ul className="portfolio-item__image-list">
-                  {data.images.map((image, i) => (
+            <PreviewCompatibleImage imageInfo={data.images[this.state.activeItem]} />
+            ) : null}
+            
+          {data.thumbnails && data.thumbnails.length ? (
+                <ul className="portfolio-item__thumbnail-list">
+                  {data.thumbnails.map((thumbnail, i) => (
                     <li key={i}>
-                      <PreviewCompatibleImage imageInfo={image} />
+                      <button onClick={(e) => this.setActiveItem(i)} aria-label="Change main image">
+                        <Img fixed={thumbnail.image.childImageSharp.fixed} />
+                      </button>
                     </li>
                   ))}
                 </ul>
             ) : null}
+
         </div>
+
         <article className="portfolio-item__text-wrapper">
           <div className="portfolio-item__content">
             <header>
@@ -52,14 +78,15 @@ export class PortfolioItemTemplate extends React.Component {
 PortfolioItemTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
+  tags: PropTypes.array,
   title: PropTypes.string,
   date: PropTypes.string,
-  images: PropTypes.array
+  images: PropTypes.array,
+  thumbnails: PropTypes.array
 }
 
 const PortfolioItem = ({ data }) => {
-  const { markdownRemark: post } = data
-
+  const { page: post } = data 
   return (
     <Layout>
       <PortfolioItemTemplate
@@ -69,35 +96,47 @@ const PortfolioItem = ({ data }) => {
         title={post.frontmatter.title}
         date={post.frontmatter.date}
         images={post.frontmatter.images}
+        thumbnails={data.thumbnails.frontmatter.images}
       />
     </Layout>
   )
 }
 
 PortfolioItem.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
+  data: PropTypes.object.isRequired
 }
 
 export default PortfolioItem
 
 export const pageQuery = graphql`
-  query PortfolioItemByID($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+  query PortfolioItemTemplate($id: String!) {
+    page: markdownRemark(id: { eq: $id }) {
+        id
+        html
+        frontmatter {
+          date(formatString: "YYYY")
+          title
+          tags
+          images {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 580, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            alt
+          }
+        }
+    }
+    thumbnails: markdownRemark(id: { eq: $id }) {
       id
-      html
       frontmatter {
-        date(formatString: "YYYY")
-        title
-        tags
         images {
           image {
             childImageSharp {
-              fluid(maxWidth: 240, quality: 64) {
-                ...GatsbyImageSharpFluid
+              fixed(width: 75, height: 75) {
+                ...GatsbyImageSharpFixed
               }
             }
           }
