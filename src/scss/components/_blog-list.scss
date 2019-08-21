@@ -3,7 +3,7 @@
     &__item {
         padding-bottom: rem($padding-base);  
         + .blog-list__item {
-            border-top: 2px dashed $blue;
+            border-top: 2px solid $blue;
         }
         .title {
             @include h3;

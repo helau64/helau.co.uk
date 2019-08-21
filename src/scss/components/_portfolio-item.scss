@@ -1,21 +1,29 @@
 .portfolio-item {
-    display: flex;
     height: 100%;
+    padding-top: rem(45px);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: $padding-base * 2;
+    @include between-widths(sm, md) {
+        grid-column-gap: $padding-base;
+    }
+    @include max-width(sm) {
+        grid-template-columns: 1fr;
+        grid-row-gap: $padding-base;
+    }
     .page-title {
         @include h2;
         margin-bottom: 0;
         line-height: 1.25;
-        margin-top: 0.5em;
+        margin-top: 0;
     }
     .date {
-        @include light;
+        color: $red;
+        font-size: rem(14px);
     }
 }
 
 .portfolio-item {
-    &__image-wrapper, &__text-wrapper {
-        width: 100%;
-    }
     &__image-list {
         @include unlist;
         li:not(:last-of-type) {

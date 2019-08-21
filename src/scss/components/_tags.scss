@@ -14,7 +14,7 @@
     @include unlist;
     margin-bottom: rem($padding-base);
     &__tag {
-        border-bottom: 2px dashed $blue;
+        border-bottom: 2px solid $blue;
         padding-top: rem(5px);
         h2 {
             @include h4;
@@ -53,7 +53,8 @@
 .tag-list--portfolio-item {
     @include unlist;
     @include light;
-    margin: rem(10px) 0;
+    font-size: rem(14px);
+    margin-top: rem($padding-base);
     li {
         display: inline-block;
     }
