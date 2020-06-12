@@ -3,15 +3,13 @@
     display: block;
     width: 100%;
     padding-left: rem($padding-base) / 2;
-    margin-top: rem(225px);
+    padding-top: rem($padding-base) / 2;
+    margin-top: rem(75px);
     box-shadow: 10px 10px 0px -1px $red;
     @include max-width(sm) {
         padding-left: rem($padding-base) / 4;
         box-shadow: 10px 10px 0px -3px $red;
-        margin-top: 0;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        margin-top: rem(25px);
     }
     @include max-width(xs) {
         padding: rem($padding-base) / 4;
@@ -21,28 +19,29 @@
         @include header;
     }
     &__title {
-        font-size: 10vw;
+        font-size: 7vw;
         margin: 0 rem($padding-base);
         @include min-width(lg) {
-            font-size: rem(130px);
+            font-size: rem(80px);
         }
         @include max-width(sm) {
-            font-size: 14vw;
+            font-size: 9vw;
         }
         @include max-width(xs) {
             font-size: 12vw;
         }
     }
     &__subtitle {
-        font-size: 8vw;
+        font-size: 5vw;
         margin: 0 rem($padding-base);
-        margin-top: rem(-20px);
+        margin-top: rem(-10px);
         @include min-width(lg) {
-            font-size: rem(120px);
+            font-size: rem(60px);
+            margin-top: rem(-20px);
         }
         @include max-width(sm) {
             margin-top: rem(-5px);
-            font-size: 10vw;
+            font-size: 8vw;
         }
         @include max-width(xs) {
             font-size: 10vw;

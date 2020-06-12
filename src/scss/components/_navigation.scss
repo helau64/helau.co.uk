@@ -31,7 +31,7 @@
     @include max-width(sm) {
         display: none;
         position: absolute;
-        background-color: $pink;
+        background-color: $cream;
         width: calc(100% + #{$padding-base});
         margin-left: -$padding-base / 2;
         padding: rem($padding-base) / 2;
