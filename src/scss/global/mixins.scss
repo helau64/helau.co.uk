@@ -23,6 +23,12 @@
 }
 
 @mixin header {
+  font-family: "ClearfaceStd-Heavy", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin header-italic {
   font-family: "ClearfaceStd-HeavyItalic", serif;
   font-weight: 400;
   font-style: normal;
@@ -62,6 +68,12 @@
   @include max-width(sm) {
     font-size: $h2;
   }
+}
+
+@mixin box-shadow($width, $color) {
+  background-color: white;
+  box-shadow: 10px 10px 0px $width $color;
+  padding: rem($padding-base);
 }
 
 @mixin min-width($breakpoint) {

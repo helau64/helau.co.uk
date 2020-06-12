@@ -1,0 +1,59 @@
+.header {
+    @include header;
+    @include box-shadow(-5px, $red);
+    padding-top: rem(15px);
+    padding-bottom: 0;
+}
+
+.header--home {
+    background-color: white;
+    display: block;
+    width: 100%;
+    
+    @include box-shadow(-1px, $red);
+    margin-top: rem(75px);
+
+    @include max-width(sm) {
+        @include box-shadow(-1px, $red);
+        margin-top: rem(25px);
+    }
+}
+
+.header--home__title {
+    @include header-italic;
+    font-size: 7vw;
+    margin: 0 rem($padding-base);
+
+    @include min-width(lg) {
+        font-size: rem(80px);
+    }
+
+    @include max-width(sm) {
+        font-size: 9vw;
+    }
+
+    @include max-width(xs) {
+        font-size: 12vw;
+    }
+}
+
+.header--home__subtitle {
+    @include header;
+    font-size: 4vw;
+    display: block;
+    margin: 0 rem($padding-base);
+    margin-top: rem(-15px);
+
+    @include min-width(lg) {
+        font-size: rem(50px);
+    }
+
+    @include max-width(sm) {
+        margin-top: rem(-10px);
+        font-size: 6vw;
+    }
+
+    @include max-width(xs) {
+        font-size: 8vw;
+    }
+}

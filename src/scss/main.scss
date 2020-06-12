@@ -9,10 +9,11 @@
 @import "global/typography";
 @import "global/states";
 
+@import "components/header";
 @import "components/navigation";
 @import "components/portfolio-list";
 @import "components/blog-list";
-@import "components/home-header";
 @import "components/tags";
 @import "components/portfolio-item";
 @import "components/blog-post";
+@import "components/latest";

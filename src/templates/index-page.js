@@ -8,10 +8,17 @@ export const IndexPageTemplate = ({
   title,
   subtitle,
 }) => (
-  <header className="header--home">
-    <h1 className="header--home__title">{title}</h1>
-    <h2 className="header--home__subtitle color-blue">{subtitle}</h2>
-  </header>
+  <div>
+    <header className="header--home">
+      <h1 className="header--home__title">{title}</h1>
+      <span className="header--home__subtitle color-blue">{subtitle}</span>
+    </header>
+
+    <article class="latest">
+      <h2 class="latest__title">Latest</h2>
+    </article>
+
+  </div>
 )
 
 IndexPageTemplate.propTypes = {

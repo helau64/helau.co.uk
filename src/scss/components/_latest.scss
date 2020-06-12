@@ -1,0 +1,8 @@
+.latest {
+    margin-top: rem($padding-base) * 2;
+    @include box-shadow(-5px, $blue);
+}
+
+.latest__title {
+    @include header;
+}

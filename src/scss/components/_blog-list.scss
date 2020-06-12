@@ -1,20 +1,30 @@
 .blog-list {
     @include unlist;
-    &__item {
-        padding-bottom: rem($padding-base);  
-        + .blog-list__item {
-            border-top: 2px solid $blue;
-        }
-        .title {
-            @include h3;
-            margin-bottom: 0;
-        }
-        .subtitle {
-            @include light;
-            @include small;
-        }
-        .excerpt {
-            margin-top: rem(10px);
-        }
+    @include box-shadow(-5px, $blue);
+    
+    margin-top: rem($padding-base) * 2;
+}
+
+.blog-list__item {
+    padding: rem($padding-base) rem($padding-base / 2);  
+    + .blog-list__item {
+        border-top: 2px solid $blue;
+    }
+    .title-link {
+        display: inline-block;
+    }
+    .title {
+        @include h3;
+        margin-bottom: 0;
+        line-height: 1.2;
+    }
+    .subtitle {
+        @include light;
+        @include small;
+        display: block;
+        margin-top: 5px;
+    }
+    .excerpt {
+        margin-top: rem(10px);
     }
 }

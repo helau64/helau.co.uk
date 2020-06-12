@@ -24,25 +24,24 @@
     }
 }
 
-.portfolio-item {
-    &__image-wrapper {
-        text-align: center;
+.portfolio-item__image-wrapper {
+    text-align: center;
+}
+
+.portfolio-item__thumbnail-list {
+    @include unlist;
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-top: rem($padding-base);
+    li {
+        margin: rem(10px);
     }
-    &__thumbnail-list {
-        @include unlist;
-        display: inline-flex;
-        flex-wrap: wrap;
-        margin-top: rem($padding-base);
-        li {
-            margin: rem(10px);
-        }
-        button {
-            border: none;
-            padding: 0;
-            margin: 0;
-            background-color: none;
-            border: none;
-            cursor: pointer;
-        }
+    button {
+        border: none;
+        padding: 0;
+        margin: 0;
+        background-color: none;
+        border: none;
+        cursor: pointer;
     }
 }

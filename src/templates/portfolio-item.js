@@ -54,7 +54,7 @@ export class PortfolioItemTemplate extends React.Component {
         <article className="portfolio-item__text-wrapper">
           <div className="portfolio-item__content">
             <header>
-              <h1 className="page-title">{data.title}</h1>
+              <h1 className="header">{data.title}</h1>
               {data.tags && data.tags.length ? (
                   <ul className="tag-list--portfolio-item">
                     {data.tags.map((tag, i, arr) => (

@@ -33,7 +33,6 @@ b, strong, .bold {
 
 a {
     color: $blue;
-    text-underline-position: under;
     text-decoration: none;
     &:hover, &:focus, &:active {
         text-decoration: underline;
@@ -50,12 +49,4 @@ a {
 
 .color-blue {
     color: $blue;
-}
-
-.page-title {
-    @include header;
-    background-color: white;
-    box-shadow: 10px 10px 0px -5px $red;
-    padding: 0 rem($padding-base);
-    padding-top: rem($padding-base) / 2;
 }

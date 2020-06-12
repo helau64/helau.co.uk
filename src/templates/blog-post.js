@@ -20,23 +20,25 @@ export const BlogPostTemplate = ({
   return (
     <section className="section blog-post">
       {helmet || ''}
-        <h1 className="page-title">{title}</h1>
-        <p className="blog-post__description">{description}</p>
-        <PostContent content={content} />
-        <div class="blog-post__info">
-          <span class="blog-post__date">{date}</span>
-          {tags && tags.length ? (
-            <div className="tag-list--blog-post">
-              <h4>Tags</h4>
-              <ul>
-                {tags.map(tag => (
-                  <li className="tag-list__tag" key={tag + `tag`}>
-                    <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
+        <h1 className="header">{title}</h1>
+        <div className="blog-post__content">
+          <p className="blog-post__description">{description}</p>
+          <PostContent content={content} />
+          <div class="blog-post__info">
+            <span class="blog-post__date">{date}</span>
+            {tags && tags.length ? (
+              <div className="tag-list--blog-post">
+                <h4>Tags</h4>
+                <ul>
+                  {tags.map(tag => (
+                    <li className="tag-list__tag" key={tag + `tag`}>
+                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </div>
         </div>
     </section>
   )

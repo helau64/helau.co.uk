@@ -8,7 +8,7 @@ export default class PortfolioIndexPage extends React.Component {
     return (
       <Layout>
         <header>
-          <h1 class="page-title">Portfolio</h1>
+          <h1 class="header">Portfolio</h1>
         </header>
         <article>
           <PortfolioRoll />

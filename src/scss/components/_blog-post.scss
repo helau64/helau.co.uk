@@ -1,10 +1,16 @@
-.blog-post {
-    &__description {
-        padding: rem($padding-base) 0 rem($padding-base);
-        border-bottom: 2px solid $red;
-    }
-    &__info {
-        border-top: 2px solid $red;
-        padding-top: rem($padding-base);
-    }
+.blog-post__description {
+    padding: rem($padding-base) 0 rem($padding-base);
+    border-bottom: 2px solid $red;
+    margin-bottom: rem($padding-base * 1.5);
+    margin-top: 0;
+}
+
+.blog-post__info {
+    border-top: 2px solid $red;
+    padding-top: rem($padding-base);
+}
+
+.blog-post__content {
+    @include box-shadow(-5px, $blue);
+    padding: rem($padding-base) rem($padding-base * 2);
 }

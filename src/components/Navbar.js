@@ -52,20 +52,30 @@ const Navbar = class extends React.Component {
           id="navMenu"
           className={`navbar-menu ${this.state.navBarActiveClass}`}
         >
+
           <li>
             <Link className="navbar__item" to="/portfolio">
               Portfolio
             </Link>
           </li>
+
           <li>
+            <Link className="navbar__item" to="/blog">
+              Blog
+            </Link>
+          </li>
+
+          {/* <li>
             <a href="https://www.etsy.com/uk/shop/helau64" 
               target="_blank"
               rel="noopener noreferrer"
               className="navbar__item">
               Shop
             </a>
-          </li>
+          </li> */}
+
           <hr></hr>
+
           <li className="navbar__item">
             <a
               href="https://twitter.com/helau64"
@@ -76,6 +86,7 @@ const Navbar = class extends React.Component {
               Twitter
             </a>
           </li>
+
           <li className="navbar__item">
             <a 
               href="https://instagram.com/helau64"
@@ -86,6 +97,7 @@ const Navbar = class extends React.Component {
               Instagram
             </a>
           </li>
+
           <li className="navbar__item">
             <a
                 href="https://github.com/helau64"
@@ -96,7 +108,9 @@ const Navbar = class extends React.Component {
                 GitHub
               </a>
           </li>
+
           <hr></hr>
+
           <li className="navbar__item">
             <a href="mailto:hi@helau.co.uk">hi@helau.co.uk</a>
           </li>
